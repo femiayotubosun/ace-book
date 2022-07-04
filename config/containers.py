@@ -4,14 +4,11 @@ from common.database import Database
 from book.repository import BooksRepository
 from book.services import BookService
 
-import os
-
 
 class Container(containers.DeclarativeContainer):
     wiring_config = containers.WiringConfiguration(modules=["book.routers"])
 
     load_dotenv()
-    print(f'dATABASE.URL{os.getenv("DATABASE_url")}')
 
     config = providers.Configuration()
     config.db.url.from_env("DATABASE_URL")

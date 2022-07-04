@@ -14,7 +14,8 @@ Base = declarative_base()
 class Database:
     def __init__(self, db_url: str) -> None:
         self._engine = create_engine(
-            db_url, echo=True, connect_args={"check_same_thread": False}
+            db_url,
+            echo=True,
         )
         self._session_factory = orm.scoped_session(
             orm.sessionmaker(

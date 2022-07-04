@@ -9,6 +9,7 @@ sqlalchemy = "*"
 dependency-injector = "*"
 python-dotenv = "*"
 pytest = "*"
+psycopg2 = "*"
 
 [dev-packages]
 black = "*"
