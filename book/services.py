@@ -7,7 +7,10 @@ class BookService:
     def __init__(self, books_repository: BooksRepository) -> None:
         self._repository: BooksRepository = books_repository
 
-    def get_books(
+    def get_many_books(
         self,
     ) -> Iterator[Book]:
-        return self._repository.get_all()
+        return [
+            Book(id=1, title="A Great Book"),
+            Book(id=2, title="Anothe Great Book"),
+        ]

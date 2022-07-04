@@ -20,4 +20,4 @@ class Container(containers.DeclarativeContainer):
     book_repository = providers.Factory(
         BooksRepository, session_factory=db.provided.session
     )
-    book_service = providers.Factory(BookService, book_repository=book_repository)
+    book_service = providers.Factory(BookService, books_repository=book_repository)

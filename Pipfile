@@ -8,6 +8,7 @@ fastapi = {extras = ["all"], version = "*"}
 sqlalchemy = "*"
 dependency-injector = "*"
 python-dotenv = "*"
+pytest = "*"
 
 [dev-packages]
 black = "*"

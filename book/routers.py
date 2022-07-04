@@ -14,4 +14,4 @@ router = APIRouter(tags=["books"], prefix="/books")
 def get_many_books(
     book_service: BookService = Depends(Provide[Container.book_service]),
 ):
-    return book_service.get_books()
+    return book_service.get_many_books()
