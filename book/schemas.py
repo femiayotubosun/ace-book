@@ -52,3 +52,30 @@ class UpdateBook(BaseModel):
                 "rating": 3,
             }
         }
+
+
+class CreateChapter(BaseModel):
+    title: str = Field(title="Title of the chapter")
+    content: str = Field(title="Content of the book", min_length=1)
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "title": "Chapter One",
+                "content": "<i>He moved through the air</>",
+            }
+        }
+
+
+class ResponseChapter(BaseModel):
+    id: UUID
+    title: str = Field(title="Title of the chapter")
+    content: str = Field(title="Content of the book", min_length=1)
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "title": "Chapter One",
+                "content": "<i>He moved through the air</>",
+            }
+        }

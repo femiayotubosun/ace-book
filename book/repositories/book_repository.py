@@ -1,10 +1,9 @@
 from contextlib import AbstractContextManager
 from typing import Callable, Iterator
 from uuid import UUID
-from requests import delete
 from sqlalchemy.orm import Session
 from book.schemas import CreateBook, UpdateBook
-from .models import Book
+from book.models import Book
 from common.exceptions import NotFoundHTTPException
 
 
@@ -18,10 +17,10 @@ class BooksRepository:
         with self.session_factory() as session:
             if q:
                 # FIXME
-                return session.query(Book).filter(Book.title.ilike == q).all()
+                return session.query(Book).filter(Book.title.ilike == q)
             return session.query(Book).all()
 
-    def get_by_id(self, book_id: UUID) -> Book:
+    def get_book_by_id(self, book_id: UUID) -> Book:
         with self.session_factory() as session:
             book = session.query(Book).filter(Book.id == book_id).first()
             if not book:
