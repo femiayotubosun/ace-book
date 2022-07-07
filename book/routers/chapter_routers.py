@@ -3,7 +3,6 @@ from fastapi import APIRouter, Depends, status
 from dependency_injector.wiring import inject, Provide
 from config.containers import Container
 from book.services import BookService
-from book.schemas import CreateChapter, ResponseChapter
 
 
 router = APIRouter(tags=["chapters"], prefix="/chapters")
